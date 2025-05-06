@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
-import { pt } from "date-fns/locale/pt";
+import { pt } from "date-fns/locale";
 
 // Mock dream data with dates
 const dreamDates = [
