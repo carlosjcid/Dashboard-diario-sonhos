@@ -4,7 +4,7 @@ import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
-import { pt } from "date-fns/locale";
+import { pt as ptLocale } from "date-fns/locale/pt";
 
 // Mock dream data with dates
 const dreamDates = [
@@ -83,7 +83,7 @@ const CalendarView = () => {
   };
   
   // Format the selected date for display
-  const formattedDate = selectedDate ? format(selectedDate, 'dd MMMM yyyy', { locale: pt }) : '';
+  const formattedDate = selectedDate ? format(selectedDate, 'dd MMMM yyyy', { locale: ptLocale }) : '';
   
   // Check if the selected date has dreams
   const hasDreams = selectedDate && dreamDates.some(d => 
@@ -110,7 +110,7 @@ const CalendarView = () => {
                 selected={selectedDate}
                 onSelect={setSelectedDate}
                 className="rounded-md border"
-                locale={pt}
+                locale={ptLocale}
                 components={{
                   DayContent: ({ date }) => (
                     <div className="relative w-full h-full flex items-center justify-center">
