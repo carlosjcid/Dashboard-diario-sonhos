@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { pt } from "date-fns/locale";
 
-// Mock dream data with dates
+// Dados de sonhos com datas
 const dreamDates = [
   { date: new Date(2023, 4, 2), count: 2, moods: ['Admirado', 'Curioso'] },
   { date: new Date(2023, 4, 4), count: 1, moods: ['Curioso'] },
@@ -61,7 +61,7 @@ const getMoodColor = (mood: string) => {
 const CalendarView = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   
-  // Custom day rendering to show dream indicators
+  // Renderização personalizada para mostrar indicadores de sonho
   const dayRender = (date: Date) => {
     const dreamDate = dreamDates.find(d => 
       d.date.getDate() === date.getDate() && 
@@ -83,10 +83,10 @@ const CalendarView = () => {
     );
   };
   
-  // Format the selected date for display
+  // Formatar a data selecionada para exibição
   const formattedDate = selectedDate ? format(selectedDate, 'dd MMMM yyyy', { locale: pt }) : '';
   
-  // Check if the selected date has dreams
+  // Verificar se a data selecionada tem sonhos
   const hasDreams = selectedDate && dreamDates.some(d => 
     d.date.getDate() === selectedDate.getDate() && 
     d.date.getMonth() === selectedDate.getMonth() && 

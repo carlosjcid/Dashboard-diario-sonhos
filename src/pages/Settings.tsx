@@ -12,30 +12,30 @@ const Settings = () => {
   
   const handleSave = () => {
     toast({
-      title: "Settings saved",
-      description: "Your preferences have been updated successfully.",
+      title: "Configurações salvas",
+      description: "Suas preferências foram atualizadas com sucesso.",
     });
   };
 
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Settings</h1>
+        <h1 className="text-3xl font-bold mb-2">Configurações</h1>
         <p className="text-muted-foreground">
-          Configure your dream diary preferences
+          Configure as preferências do seu diário de sonhos
         </p>
       </div>
       
       <Card className="dream-card mb-6">
         <CardHeader>
-          <CardTitle>Notifications</CardTitle>
-          <CardDescription>Configure how you want to be reminded</CardDescription>
+          <CardTitle>Notificações</CardTitle>
+          <CardDescription>Configure como você deseja receber lembretes</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Morning Dream Reminder</p>
-              <p className="text-sm text-muted-foreground">Receive a notification in the morning to record your dreams</p>
+              <p className="font-medium">Lembrete Matinal de Sonho</p>
+              <p className="text-sm text-muted-foreground">Receba uma notificação pela manhã para registrar seus sonhos</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -44,8 +44,8 @@ const Settings = () => {
           
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Weekly Dream Summary</p>
-              <p className="text-sm text-muted-foreground">Get a weekly report of your dream patterns</p>
+              <p className="font-medium">Resumo Semanal de Sonhos</p>
+              <p className="text-sm text-muted-foreground">Receba um relatório semanal dos padrões dos seus sonhos</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -54,8 +54,8 @@ const Settings = () => {
           
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Dream Pattern Alerts</p>
-              <p className="text-sm text-muted-foreground">Be notified of recurring patterns in your dreams</p>
+              <p className="font-medium">Alertas de Padrões de Sonhos</p>
+              <p className="text-sm text-muted-foreground">Seja notificado sobre padrões recorrentes em seus sonhos</p>
             </div>
             <Switch />
           </div>
@@ -64,14 +64,14 @@ const Settings = () => {
       
       <Card className="dream-card mb-6">
         <CardHeader>
-          <CardTitle>Display Preferences</CardTitle>
-          <CardDescription>Customize how your dream diary looks and behaves</CardDescription>
+          <CardTitle>Preferências de Exibição</CardTitle>
+          <CardDescription>Personalize a aparência e o comportamento do seu diário de sonhos</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Dark Mode</p>
-              <p className="text-sm text-muted-foreground">Use dark color theme</p>
+              <p className="font-medium">Modo Escuro</p>
+              <p className="text-sm text-muted-foreground">Usar tema de cores escuro</p>
             </div>
             <Switch />
           </div>
@@ -80,8 +80,8 @@ const Settings = () => {
           
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Show Dream Icons</p>
-              <p className="text-sm text-muted-foreground">Display icons based on dream themes</p>
+              <p className="font-medium">Mostrar Ícones de Sonhos</p>
+              <p className="text-sm text-muted-foreground">Exibir ícones baseados nos temas dos sonhos</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -90,8 +90,8 @@ const Settings = () => {
           
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Animation Effects</p>
-              <p className="text-sm text-muted-foreground">Enable animations throughout the app</p>
+              <p className="font-medium">Efeitos de Animação</p>
+              <p className="text-sm text-muted-foreground">Ativar animações por todo o aplicativo</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -100,26 +100,26 @@ const Settings = () => {
       
       <Card className="dream-card mb-6">
         <CardHeader>
-          <CardTitle>Privacy</CardTitle>
-          <CardDescription>Manage your data and privacy settings</CardDescription>
+          <CardTitle>Privacidade</CardTitle>
+          <CardDescription>Gerencie seus dados e configurações de privacidade</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Export Dream Data</p>
-              <p className="text-sm text-muted-foreground">Download all your dream records</p>
+              <p className="font-medium">Exportar Dados de Sonhos</p>
+              <p className="text-sm text-muted-foreground">Baixar todos os seus registros de sonhos</p>
             </div>
-            <Button variant="outline">Export</Button>
+            <Button variant="outline">Exportar</Button>
           </div>
           
           <Separator />
           
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-medium">Clear All Dreams</p>
-              <p className="text-sm text-muted-foreground">Delete all dream records (cannot be undone)</p>
+              <p className="font-medium">Limpar Todos os Sonhos</p>
+              <p className="text-sm text-muted-foreground">Excluir todos os registros de sonhos (não pode ser desfeito)</p>
             </div>
-            <Button variant="destructive">Clear Data</Button>
+            <Button variant="destructive">Limpar Dados</Button>
           </div>
         </CardContent>
       </Card>
@@ -129,7 +129,7 @@ const Settings = () => {
           className="bg-dream-600 hover:bg-dream-700"
           onClick={handleSave}
         >
-          Save Settings
+          Salvar Configurações
         </Button>
       </div>
     </Layout>

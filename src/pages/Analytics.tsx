@@ -6,74 +6,74 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
          PieChart, Pie, Cell, LineChart, Line, Legend } from 'recharts';
 
-// Mock data for charts
+// Dados fictícios para os gráficos
 const monthlyDreamData = [
   { month: 'Jan', count: 12 },
-  { month: 'Feb', count: 18 },
+  { month: 'Fev', count: 18 },
   { month: 'Mar', count: 15 },
-  { month: 'Apr', count: 22 },
-  { month: 'May', count: 26 },
+  { month: 'Abr', count: 22 },
+  { month: 'Mai', count: 26 },
 ];
 
 const dreamMoodsData = [
-  { name: 'Peaceful', value: 35, color: '#3B82F6' },
-  { name: 'Happy', value: 25, color: '#10B981' },
-  { name: 'Anxious', value: 15, color: '#EF4444' },
-  { name: 'Curious', value: 20, color: '#F59E0B' },
-  { name: 'Surprised', value: 5, color: '#8B5CF6' },
+  { name: 'Tranquilo', value: 35, color: '#3B82F6' },
+  { name: 'Feliz', value: 25, color: '#10B981' },
+  { name: 'Ansioso', value: 15, color: '#EF4444' },
+  { name: 'Curioso', value: 20, color: '#F59E0B' },
+  { name: 'Surpreso', value: 5, color: '#8B5CF6' },
 ];
 
 const dreamClarityData = [
   { month: 'Jan', high: 5, medium: 5, low: 2 },
-  { month: 'Feb', high: 7, medium: 8, low: 3 },
+  { month: 'Fev', high: 7, medium: 8, low: 3 },
   { month: 'Mar', high: 6, medium: 7, low: 2 },
-  { month: 'Apr', high: 9, medium: 10, low: 3 },
-  { month: 'May', high: 12, medium: 9, low: 5 },
+  { month: 'Abr', high: 9, medium: 10, low: 3 },
+  { month: 'Mai', high: 12, medium: 9, low: 5 },
 ];
 
 const dreamThemesData = [
-  { name: 'Flying', count: 15, color: '#3B82F6' },
-  { name: 'Falling', count: 8, color: '#EF4444' },
-  { name: 'Chase', count: 10, color: '#F59E0B' },
-  { name: 'Water', count: 12, color: '#06B6D4' },
-  { name: 'Family', count: 9, color: '#10B981' },
-  { name: 'Travel', count: 14, color: '#8B5CF6' },
-  { name: 'Work', count: 6, color: '#EC4899' },
-  { name: 'School', count: 5, color: '#F97316' },
+  { name: 'Voando', count: 15, color: '#3B82F6' },
+  { name: 'Caindo', count: 8, color: '#EF4444' },
+  { name: 'Perseguição', count: 10, color: '#F59E0B' },
+  { name: 'Água', count: 12, color: '#06B6D4' },
+  { name: 'Família', count: 9, color: '#10B981' },
+  { name: 'Viagem', count: 14, color: '#8B5CF6' },
+  { name: 'Trabalho', count: 6, color: '#EC4899' },
+  { name: 'Escola', count: 5, color: '#F97316' },
 ];
 
 const lucidDreamData = [
   { month: 'Jan', lucid: 2, total: 12 },
-  { month: 'Feb', lucid: 5, total: 18 },
+  { month: 'Fev', lucid: 5, total: 18 },
   { month: 'Mar', lucid: 4, total: 15 },
-  { month: 'Apr', lucid: 7, total: 22 },
-  { month: 'May', lucid: 8, total: 26 },
+  { month: 'Abr', lucid: 7, total: 22 },
+  { month: 'Mai', lucid: 8, total: 26 },
 ];
 
 const Analytics = () => {
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Dream Analytics</h1>
+        <h1 className="text-3xl font-bold mb-2">Análises de Sonhos</h1>
         <p className="text-muted-foreground">
-          Analyze your dream patterns and trends over time
+          Analise seus padrões e tendências de sonhos ao longo do tempo
         </p>
       </div>
       
       <Tabs defaultValue="overview" className="mb-8">
         <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="moods">Moods</TabsTrigger>
-          <TabsTrigger value="clarity">Clarity</TabsTrigger>
-          <TabsTrigger value="themes">Themes</TabsTrigger>
-          <TabsTrigger value="lucidity">Lucidity</TabsTrigger>
+          <TabsTrigger value="overview">Visão Geral</TabsTrigger>
+          <TabsTrigger value="moods">Humores</TabsTrigger>
+          <TabsTrigger value="clarity">Clareza</TabsTrigger>
+          <TabsTrigger value="themes">Temas</TabsTrigger>
+          <TabsTrigger value="lucidity">Lucidez</TabsTrigger>
         </TabsList>
         
         <TabsContent value="overview" className="mt-6">
           <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
             <Card className="dream-card">
               <CardHeader>
-                <CardTitle>Dreams Per Month</CardTitle>
+                <CardTitle>Sonhos Por Mês</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -88,7 +88,7 @@ const Analytics = () => {
                         border: '1px solid rgba(134, 110, 255, 0.2)',
                         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
                       }}
-                      formatter={(value) => [`${value} dreams`, 'Count']}
+                      formatter={(value) => [`${value} sonhos`, 'Contagem']}
                     />
                     <Bar dataKey="count" fill="#866EFF" radius={[4, 4, 0, 0]} />
                   </BarChart>
@@ -98,7 +98,7 @@ const Analytics = () => {
             
             <Card className="dream-card">
               <CardHeader>
-                <CardTitle>Dream Mood Distribution</CardTitle>
+                <CardTitle>Distribuição de Humor nos Sonhos</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -118,7 +118,7 @@ const Analytics = () => {
                       ))}
                     </Pie>
                     <Tooltip 
-                      formatter={(value) => [`${value}`, 'Dreams']}
+                      formatter={(value) => [`${value}`, 'Sonhos']}
                       contentStyle={{ 
                         backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                         borderRadius: '8px',
@@ -135,7 +135,7 @@ const Analytics = () => {
         <TabsContent value="moods" className="mt-6">
           <Card className="dream-card">
             <CardHeader>
-              <CardTitle>Dream Mood Analysis</CardTitle>
+              <CardTitle>Análise de Humor nos Sonhos</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
@@ -155,7 +155,7 @@ const Analytics = () => {
                     ))}
                   </Pie>
                   <Tooltip 
-                    formatter={(value) => [`${value} dreams`, 'Count']}
+                    formatter={(value) => [`${value} sonhos`, 'Contagem']}
                     contentStyle={{ 
                       backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                       borderRadius: '8px',
@@ -172,7 +172,7 @@ const Analytics = () => {
         <TabsContent value="clarity" className="mt-6">
           <Card className="dream-card">
             <CardHeader>
-              <CardTitle>Dream Clarity Levels Over Time</CardTitle>
+              <CardTitle>Níveis de Clareza ao Longo do Tempo</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
@@ -196,9 +196,9 @@ const Analytics = () => {
                     }} 
                   />
                   <Legend />
-                  <Bar dataKey="high" name="High Clarity" stackId="a" fill="#10B981" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="medium" name="Medium Clarity" stackId="a" fill="#F59E0B" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="low" name="Low Clarity" stackId="a" fill="#EF4444" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="high" name="Alta Clareza" stackId="a" fill="#10B981" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="medium" name="Média Clareza" stackId="a" fill="#F59E0B" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="low" name="Baixa Clareza" stackId="a" fill="#EF4444" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -208,7 +208,7 @@ const Analytics = () => {
         <TabsContent value="themes" className="mt-6">
           <Card className="dream-card">
             <CardHeader>
-              <CardTitle>Common Dream Themes</CardTitle>
+              <CardTitle>Temas Comuns de Sonhos</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
@@ -226,7 +226,7 @@ const Analytics = () => {
                   <XAxis type="number" />
                   <YAxis type="category" dataKey="name" />
                   <Tooltip 
-                    formatter={(value) => [`${value} dreams`, 'Count']}
+                    formatter={(value) => [`${value} sonhos`, 'Contagem']}
                     contentStyle={{ 
                       backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                       borderRadius: '8px',
@@ -234,7 +234,7 @@ const Analytics = () => {
                     }} 
                   />
                   <Legend />
-                  <Bar dataKey="count" name="Occurrences" radius={[0, 4, 4, 0]}>
+                  <Bar dataKey="count" name="Ocorrências" radius={[0, 4, 4, 0]}>
                     {dreamThemesData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
@@ -248,7 +248,7 @@ const Analytics = () => {
         <TabsContent value="lucidity" className="mt-6">
           <Card className="dream-card">
             <CardHeader>
-              <CardTitle>Lucid Dreaming Progress</CardTitle>
+              <CardTitle>Progresso de Sonhos Lúcidos</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
@@ -275,7 +275,7 @@ const Analytics = () => {
                   <Line 
                     type="monotone" 
                     dataKey="total" 
-                    name="Total Dreams" 
+                    name="Total de Sonhos" 
                     stroke="#866EFF" 
                     strokeWidth={2}
                     activeDot={{ r: 8 }} 
@@ -283,7 +283,7 @@ const Analytics = () => {
                   <Line 
                     type="monotone" 
                     dataKey="lucid" 
-                    name="Lucid Dreams" 
+                    name="Sonhos Lúcidos" 
                     stroke="#4FD1C5" 
                     strokeWidth={2}
                     activeDot={{ r: 8 }} 
@@ -291,8 +291,8 @@ const Analytics = () => {
                 </LineChart>
               </ResponsiveContainer>
               <div className="mt-6 text-center">
-                <p className="text-lg font-semibold">Lucidity Rate: 28%</p>
-                <p className="text-muted-foreground text-sm mt-1">26 total dreams, 8 were lucid</p>
+                <p className="text-lg font-semibold">Taxa de Lucidez: 28%</p>
+                <p className="text-muted-foreground text-sm mt-1">26 sonhos no total, 8 foram lúcidos</p>
               </div>
             </CardContent>
           </Card>

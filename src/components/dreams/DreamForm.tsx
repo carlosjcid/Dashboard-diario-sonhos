@@ -18,39 +18,39 @@ import { Calendar } from "@/components/ui/calendar";
 import { useToast } from "@/hooks/use-toast";
 
 const clarityLevels = [
-  { value: "high", label: "High - Vivid and clear details" },
-  { value: "medium", label: "Medium - Some details remembered" },
-  { value: "low", label: "Low - Vague impressions only" },
+  { value: "high", label: "Alta - Detalhes vívidos e claros" },
+  { value: "medium", label: "Média - Alguns detalhes lembrados" },
+  { value: "low", label: "Baixa - Apenas impressões vagas" },
 ];
 
 const moodOptions = [
-  { value: "peaceful", label: "Peaceful" },
-  { value: "happy", label: "Happy" },
-  { value: "anxious", label: "Anxious" },
-  { value: "curious", label: "Curious" },
-  { value: "surprised", label: "Surprised" },
-  { value: "confused", label: "Confused" },
-  { value: "scared", label: "Scared" },
-  { value: "neutral", label: "Neutral" },
+  { value: "peaceful", label: "Tranquilo" },
+  { value: "happy", label: "Feliz" },
+  { value: "anxious", label: "Ansioso" },
+  { value: "curious", label: "Curioso" },
+  { value: "surprised", label: "Surpreso" },
+  { value: "confused", label: "Confuso" },
+  { value: "scared", label: "Assustado" },
+  { value: "neutral", label: "Neutro" },
 ];
 
 const dreamFormSchema = z.object({
   title: z.string().min(3, {
-    message: "Dream title must be at least 3 characters.",
+    message: "O título do sonho deve ter pelo menos 3 caracteres.",
   }).max(100, {
-    message: "Dream title must not exceed 100 characters.",
+    message: "O título do sonho não deve exceder 100 caracteres.",
   }),
   description: z.string().min(10, {
-    message: "Please provide a more detailed description.",
+    message: "Por favor, forneça uma descrição mais detalhada.",
   }),
   date: z.date({
-    required_error: "Please select a date.",
+    required_error: "Por favor, selecione uma data.",
   }),
   clarity: z.string({
-    required_error: "Please select a clarity level.",
+    required_error: "Por favor, selecione um nível de clareza.",
   }),
   mood: z.string({
-    required_error: "Please select a mood.",
+    required_error: "Por favor, selecione um humor.",
   }),
   tags: z.string().optional(),
   isLucid: z.boolean().default(false),
@@ -77,14 +77,14 @@ const DreamForm = () => {
 
   function onSubmit(data: DreamFormValues) {
     toast({
-      title: "Dream recorded successfully!",
-      description: "Your dream has been saved to your journal.",
+      title: "Sonho registrado com sucesso!",
+      description: "Seu sonho foi salvo no seu diário.",
     });
     
-    console.log("Form submitted:", data);
+    console.log("Formulário enviado:", data);
     
-    // In a real app, this is where we'd send data to a backend
-    // Navigate back to dashboard after submission
+    // Em um aplicativo real, é aqui que enviaríamos os dados para um backend
+    // Navegue de volta para o painel após o envio
     setTimeout(() => {
       navigate("/");
     }, 1500);
@@ -93,8 +93,8 @@ const DreamForm = () => {
   return (
     <Card className="dream-card max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Record New Dream</CardTitle>
-        <CardDescription>Document the details of your dream experience</CardDescription>
+        <CardTitle>Registrar Novo Sonho</CardTitle>
+        <CardDescription>Documente os detalhes da sua experiência de sonho</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -104,9 +104,9 @@ const DreamForm = () => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Dream Title</FormLabel>
+                  <FormLabel>Título do Sonho</FormLabel>
                   <FormControl>
-                    <Input placeholder="E.g., Flying over mountains" {...field} />
+                    <Input placeholder="Ex.: Voando sobre montanhas" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -119,7 +119,7 @@ const DreamForm = () => {
                 name="date"
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel>Date</FormLabel>
+                    <FormLabel>Data</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
@@ -130,7 +130,7 @@ const DreamForm = () => {
                             {field.value ? (
                               format(field.value, "PPP")
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Escolha uma data</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
@@ -155,7 +155,7 @@ const DreamForm = () => {
                 name="mood"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Dream Mood</FormLabel>
+                    <FormLabel>Humor do Sonho</FormLabel>
                     <FormControl>
                       <select
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -179,10 +179,10 @@ const DreamForm = () => {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Dream Description</FormLabel>
+                  <FormLabel>Descrição do Sonho</FormLabel>
                   <FormControl>
                     <Textarea 
-                      placeholder="Describe your dream in as much detail as you can remember..." 
+                      placeholder="Descreva seu sonho com o máximo de detalhes que você conseguir lembrar..." 
                       className="min-h-[120px]" 
                       {...field} 
                     />
@@ -197,7 +197,7 @@ const DreamForm = () => {
               name="clarity"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Dream Clarity</FormLabel>
+                  <FormLabel>Clareza do Sonho</FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -228,10 +228,10 @@ const DreamForm = () => {
                 <FormItem>
                   <FormLabel>Tags</FormLabel>
                   <FormControl>
-                    <Input placeholder="E.g., flying, forest, water (comma-separated)" {...field} />
+                    <Input placeholder="Ex.: voando, floresta, água (separados por vírgula)" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Add tags to categorize your dream
+                    Adicione tags para categorizar seu sonho
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -252,9 +252,9 @@ const DreamForm = () => {
                     />
                   </FormControl>
                   <div className="space-y-1 leading-none">
-                    <FormLabel>Lucid Dream</FormLabel>
+                    <FormLabel>Sonho Lúcido</FormLabel>
                     <FormDescription>
-                      Check if you were aware that you were dreaming during the dream
+                      Marque se você estava ciente de que estava sonhando durante o sonho
                     </FormDescription>
                   </div>
                 </FormItem>
@@ -267,13 +267,13 @@ const DreamForm = () => {
                 variant="outline"
                 onClick={() => navigate(-1)}
               >
-                Cancel
+                Cancelar
               </Button>
               <Button 
                 type="submit"
                 className="bg-dream-600 hover:bg-dream-700"
               >
-                Save Dream
+                Salvar Sonho
               </Button>
             </div>
           </form>
