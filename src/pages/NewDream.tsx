@@ -7,9 +7,9 @@ const NewDream = () => {
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Record New Dream</h1>
+        <h1 className="text-3xl font-bold mb-2">Registrar Novo Sonho</h1>
         <p className="text-muted-foreground">
-          Document the details of your dream before they fade from memory
+          Documente os detalhes do seu sonho antes que desapareçam da memória
         </p>
       </div>
       

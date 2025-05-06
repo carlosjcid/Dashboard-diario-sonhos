@@ -24,11 +24,11 @@ import {
 } from "@/components/ui/sidebar";
 
 const menuItems = [
-  { name: 'Dashboard', icon: Home, path: '/' },
-  { name: 'Calendar', icon: Calendar, path: '/calendar' },
-  { name: 'Journal', icon: BookOpen, path: '/journal' },
-  { name: 'Analytics', icon: BarChart2, path: '/analytics' },
-  { name: 'Settings', icon: Settings, path: '/settings' },
+  { name: 'Painel', icon: Home, path: '/' },
+  { name: 'Calendário', icon: Calendar, path: '/calendar' },
+  { name: 'Diário', icon: BookOpen, path: '/journal' },
+  { name: 'Análises', icon: BarChart2, path: '/analytics' },
+  { name: 'Configurações', icon: Settings, path: '/settings' },
 ];
 
 const Sidebar = () => {
@@ -39,7 +39,7 @@ const Sidebar = () => {
       <SidebarHeader className="py-6">
         <div className="flex items-center px-4">
           <Moon className="h-6 w-6 mr-2 text-dream-500" />
-          <span className="text-lg font-bold">DreamDiary</span>
+          <span className="text-lg font-bold">DiárioDosSonhos</span>
         </div>
         <div className="absolute right-2 top-6 md:hidden">
           <SidebarTrigger />
@@ -48,7 +48,7 @@ const Sidebar = () => {
       
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel>Navegação</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
@@ -72,7 +72,7 @@ const Sidebar = () => {
               className="flex items-center justify-center w-full px-4 py-3 rounded-lg bg-dream-600 hover:bg-dream-700 text-white font-medium transition-colors"
             >
               <PlusCircle className="h-5 w-5 mr-2" />
-              <span>Record Dream</span>
+              <span>Registrar Sonho</span>
             </Link>
           </SidebarGroupContent>
         </SidebarGroup>

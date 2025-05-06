@@ -10,9 +10,9 @@ const Index = () => {
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Dream Dashboard</h1>
+        <h1 className="text-3xl font-bold mb-2">Painel de Sonhos</h1>
         <p className="text-muted-foreground">
-          Track and visualize your dream patterns over time
+          Acompanhe e visualize seus padrões de sonhos ao longo do tempo
         </p>
       </div>
       
