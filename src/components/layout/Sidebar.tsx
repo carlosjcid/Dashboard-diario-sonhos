@@ -8,7 +8,8 @@ import {
   BarChart2, 
   Settings, 
   PlusCircle,
-  Moon
+  Moon,
+  Menu
 } from 'lucide-react';
 import {
   Sidebar as SidebarComponent,
@@ -41,8 +42,10 @@ const Sidebar = () => {
           <Moon className="h-6 w-6 mr-2 text-dream-500" />
           <span className="text-lg font-bold">DiárioDosSonhos</span>
         </div>
-        <div className="absolute right-2 top-6 md:hidden">
-          <SidebarTrigger />
+        <div className="absolute right-2 top-6 md:hidden z-50">
+          <SidebarTrigger>
+            <Menu className="h-6 w-6" />
+          </SidebarTrigger>
         </div>
       </SidebarHeader>
       

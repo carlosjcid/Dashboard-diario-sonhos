@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Painel de Sonhos</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2">Painel de Sonhos</h1>
         <p className="text-muted-foreground">
           Acompanhe e visualize seus padrões de sonhos ao longo do tempo
         </p>
@@ -20,7 +20,7 @@ const Index = () => {
       
       <DreamChart />
       
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
         <div className="lg:col-span-3">
           <RecentDreams />
         </div>

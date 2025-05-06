@@ -95,22 +95,22 @@ const CalendarView = () => {
 
   return (
     <Layout>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Calendário de Sonhos</h1>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2">Calendário de Sonhos</h1>
         <p className="text-muted-foreground">
           Acompanhe seus padrões de sonhos ao longo do tempo
         </p>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         <div className="lg:col-span-1">
           <Card className="dream-card">
-            <CardContent className="p-4">
+            <CardContent className="p-2 sm:p-4">
               <CalendarComponent
                 mode="single"
                 selected={selectedDate}
                 onSelect={setSelectedDate}
-                className="rounded-md border p-3 pointer-events-auto"
+                className="rounded-md border p-1 sm:p-3 pointer-events-auto w-full"
                 locale={pt}
                 components={{
                   DayContent: ({ date }) => (
@@ -121,17 +121,17 @@ const CalendarView = () => {
                   ),
                 }}
               />
-              <div className="mt-5">
+              <div className="mt-3 sm:mt-5">
                 <p className="text-sm text-muted-foreground mb-2">Legenda:</p>
-                <div className="flex items-center space-x-4">
-                  <div className="flex items-center">
+                <div className="flex items-center space-x-2 sm:space-x-4 flex-wrap">
+                  <div className="flex items-center mb-1">
                     <div className="h-2 w-2 rounded-full bg-dream-500 mr-1.5"></div>
-                    <span className="text-sm">Sonho registrado</span>
+                    <span className="text-xs sm:text-sm">Sonho registrado</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center mb-1">
                     <div className="h-2 w-2 rounded-full bg-dream-500 mr-1.5"></div>
                     <div className="h-2 w-2 rounded-full bg-dream-500 mr-1.5"></div>
-                    <span className="text-sm">Múltiplos sonhos</span>
+                    <span className="text-xs sm:text-sm">Múltiplos sonhos</span>
                   </div>
                 </div>
               </div>
@@ -141,15 +141,15 @@ const CalendarView = () => {
         
         <div className="lg:col-span-2">
           <Card className="dream-card h-full">
-            <CardHeader>
+            <CardHeader className="p-3 sm:p-6">
               <CardTitle>{formattedDate}</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-3 sm:p-6 pt-0">
               {hasDreams ? (
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {selectedDayDreams.map(dream => (
-                    <div key={dream.id} className="p-4 border border-border rounded-lg">
-                      <div className="flex justify-between mb-2">
+                    <div key={dream.id} className="p-3 sm:p-4 border border-border rounded-lg">
+                      <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
                         <h3 className="font-semibold text-lg">{dream.title}</h3>
                         <span className="text-sm text-muted-foreground">{dream.time}</span>
                       </div>

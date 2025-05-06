@@ -6,8 +6,8 @@ import DreamForm from '../components/dreams/DreamForm';
 const NewDream = () => {
   return (
     <Layout>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Registrar Novo Sonho</h1>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2">Registrar Novo Sonho</h1>
         <p className="text-muted-foreground">
           Documente os detalhes do seu sonho antes que desapareçam da memória
         </p>

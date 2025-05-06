@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
+import { pt } from "date-fns/locale";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -92,13 +93,13 @@ const DreamForm = () => {
 
   return (
     <Card className="dream-card max-w-2xl mx-auto">
-      <CardHeader>
+      <CardHeader className="p-4 sm:p-6">
         <CardTitle>Registrar Novo Sonho</CardTitle>
         <CardDescription>Documente os detalhes da sua experiência de sonho</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-4 sm:p-6 pt-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
             <FormField
               control={form.control}
               name="title"
@@ -113,7 +114,7 @@ const DreamForm = () => {
               )}
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="date"
@@ -125,10 +126,10 @@ const DreamForm = () => {
                         <FormControl>
                           <Button
                             variant={"outline"}
-                            className="pl-3 text-left font-normal"
+                            className="pl-3 text-left font-normal w-full"
                           >
                             {field.value ? (
-                              format(field.value, "PPP")
+                              format(field.value, "PPP", { locale: pt })
                             ) : (
                               <span>Escolha uma data</span>
                             )}
@@ -142,6 +143,7 @@ const DreamForm = () => {
                           selected={field.value}
                           onSelect={field.onChange}
                           initialFocus
+                          locale={pt}
                         />
                       </PopoverContent>
                     </Popover>
@@ -261,17 +263,18 @@ const DreamForm = () => {
               )}
             />
             
-            <div className="flex justify-end space-x-4">
+            <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4">
               <Button 
                 type="button" 
                 variant="outline"
                 onClick={() => navigate(-1)}
+                className="w-full sm:w-auto order-2 sm:order-1"
               >
                 Cancelar
               </Button>
               <Button 
                 type="submit"
-                className="bg-dream-600 hover:bg-dream-700"
+                className="bg-dream-600 hover:bg-dream-700 w-full sm:w-auto order-1 sm:order-2"
               >
                 Salvar Sonho
               </Button>
